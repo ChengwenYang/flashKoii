@@ -20,20 +20,19 @@
 
 h1 {
   color: #61dafb;
-  position: relative; /* 确保标题位置固定 */
-  z-index: 2; /* 确保标题在烟花之上 */
+  position: relative; 
+  z-index: 2; 
 }
 
-/* 特效样式 */
 
 .celebration {
-  position: fixed; /* 使用 fixed 而不是 absolute */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* 使用视口高度确保覆盖整个屏幕 */
+  height: 100vh; 
   overflow: hidden;
-  z-index: 1; /* 确保烟花在标题之下 */
+  z-index: 1; 
 }
 
 .ribbon {
@@ -45,7 +44,7 @@ h1 {
   animation: ribbon-animation 2s linear infinite;
 }
 
-/* 随机化彩带的位置和延迟 */
+
 .ribbon:nth-child(1) { left: 10%; animation-delay: 0s; background-color: rgba(255, 247, 0, 0.6);}
 .ribbon:nth-child(2) { left: 20%; animation-delay: -1s; background-color: rgba(255, 0, 0, 0.6); }
 .ribbon:nth-child(3) { left: 30%; animation-delay: -0.5s; background-color: rgba(0, 255, 0, 0.6); }
@@ -57,7 +56,7 @@ h1 {
 .ribbon:nth-child(9) { left: 90%; animation-delay: 0s; background-color: rgba(255, 132, 0, 0.6); }
 .ribbon:nth-child(10) { left: 100%; animation-delay: -1.2s; background-color: rgba(0, 255, 234, 0.6); }
 
-/* 添加更多彩带以增加效果 */
+
 
 @keyframes ribbon-animation {
   0% { transform: translateY(0) rotate(0deg); opacity: 1; }
