@@ -61,11 +61,8 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Koii Node Tracker</h1>
       <div className="node-counter">Nodes: {nodeCount}</div>
       {showEffect && <CelebrationEffect />}
-
-
     </div>
   );
 }

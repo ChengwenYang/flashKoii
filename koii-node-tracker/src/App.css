@@ -13,17 +13,9 @@
 
 .node-counter {
   margin: 20px 0;
-  font-size: 2em;
+  font-size: 7em;
   color: #61dafb;
-
 }
-
-h1 {
-  color: #61dafb;
-  position: relative; 
-  z-index: 2; 
-}
-
 
 .celebration {
   position: fixed;
