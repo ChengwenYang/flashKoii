@@ -36,7 +36,7 @@ function App() {
 
   const playSound = () => {
     const sound = new Howl({
-      src: ['sound.mp3'] 
+      src: ['/sound.mp3'] 
     });
     sound.play();
   };
