@@ -35,6 +35,18 @@ function App() {
     return () => clearInterval(interval);
   }, [nodeCount]);
 
+  useEffect(() => {
+    const handleFullScreenChange = () => {
+      setIsFullScreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullScreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullScreenChange);
+    };
+  }, []); 
+
   const playSound = () => {
     const sound = new Howl({
       src: ['/sound.mp3'] 
@@ -69,7 +81,7 @@ function App() {
       </div>
     );
   }
-  
+
   return (
     <div className="App">
       {!isFullScreen && (
