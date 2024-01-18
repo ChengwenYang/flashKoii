@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   const [nodeCount, setNodeCount] = useState(0);
   const [showEffect, setShowEffect] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
   const api = 'https://faucet-api.koii.network/api/leaderboard/get-nodes-summary';
 
   useEffect(() => {
@@ -40,6 +41,16 @@ function App() {
     });
     sound.play();
   };
+  
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  };
 
   function CelebrationEffect() {
     return (
@@ -61,10 +72,14 @@ function App() {
   
   return (
     <div className="App">
+      {!isFullScreen && (
+        <button onClick={toggleFullScreen} className="fullscreen-button">
+          Go Full Screen
+        </button>
+      )}
       <div className="node-counter">Nodes: {nodeCount}</div>
       {showEffect && <CelebrationEffect />}
     </div>
   );
 }
-
 export default App;
